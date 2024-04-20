@@ -1,9 +1,20 @@
-<Configuration>
+﻿<Configuration>
     <MappedFolders>
         <!-- 桌面 -->
         <MappedFolder>
             <HostFolder>.\Desktop</HostFolder>
             <SandboxFolder>C:\Users\WDAGUtilityAccount\Desktop</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder>
+        <!-- 输入法词库 -->
+        <MappedFolder>
+            <HostFolder>.\ime\chs_sys</HostFolder>
+            <SandboxFolder>C:\Windows\InputMethod\CHS</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder>
+        <MappedFolder>
+            <HostFolder>.\ime\Chs_user</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\AppData\Roaming\Microsoft\InputMethod\Chs</SandboxFolder>
             <ReadOnly>false</ReadOnly>
         </MappedFolder>
         <!-- App -->
@@ -103,6 +114,7 @@
           <SandboxFolder>C:\Windows\SysWOW64</SandboxFolder> 
           <ReadOnly>true</ReadOnly> 
         </MappedFolder>
+
     </MappedFolders>
     <!-- 音频 -->
     <AudioInput>Enable</AudioInput>
@@ -112,7 +124,7 @@
     <MemoryInMB>2048</MemoryInMB>
     <!-- 开机运行脚本 -->
     <LogonCommand>
-        <Command>C:\Scripts\sandbox-setup.cmd</Command>
+        <Command>powershell.exe -executionpolicy bypass -file C:\Scripts\init.ps1</Command>
     </LogonCommand>
     <!-- vGpu -->
     <vGPU>Enable</vGPU>
